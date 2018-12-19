@@ -52,7 +52,7 @@ engine-$(ARCH).tar:
 	docker save -o $@ $$(cat ../image/image-linux)
 
 .PHONY: deb
-deb: ubuntu debian raspbian ## build all deb packages
+deb: ubuntu debian ## build all deb packages
 
 .PHONY: ubuntu
 ubuntu: ubuntu-bionic ubuntu-xenial ## build all ubuntu deb packages
