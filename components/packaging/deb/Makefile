@@ -60,9 +60,6 @@ ubuntu: ubuntu-bionic ubuntu-xenial ## build all ubuntu deb packages
 .PHONY: debian
 debian: debian-stretch debian-jessie ## build all debian deb packages
 
-.PHONY: raspbian
-raspbian: raspbian-stretch debian-jessie ## build all raspbian deb packages
-
 .PHONY: ubuntu-bionic
 ubuntu-bionic: ## build ubuntu bionic deb packages
 ubuntu-bionic: $(SOURCES)
@@ -94,20 +91,6 @@ debian-jessie: $(SOURCES)
 .PHONY: debian-stretch
 debian-stretch: ## build debian stretch deb packages
 debian-stretch: $(SOURCES)
-	$(BUILD)
-	$(RUN)
-	$(CHOWN) -R $(shell id -u):$(shell id -g) debbuild/$@
-
-.PHONY: raspbian-jessie
-raspbian-jessie: ## build raspbian jessie deb packages
-raspbian-jessie: $(SOURCES)
-	$(BUILD)
-	$(RUN)
-	$(CHOWN) -R $(shell id -u):$(shell id -g) debbuild/$@
-
-.PHONY: raspbian-stretch
-raspbian-stretch: ## build raspbian stretch deb packages
-raspbian-stretch: $(SOURCES)
 	$(BUILD)
 	$(RUN)
 	$(CHOWN) -R $(shell id -u):$(shell id -g) debbuild/$@
