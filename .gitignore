@@ -1,4 +1,5 @@
 .helpers/
 Dockerfile.engine
+Dockerfile.engine-dm
 image-linux
 *.tar
