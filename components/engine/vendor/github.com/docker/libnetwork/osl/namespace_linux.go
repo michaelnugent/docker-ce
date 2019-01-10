@@ -637,7 +637,7 @@ func reexecSetIPv6() {
 
 	var (
 		action = "disable"
-		value  = byte('1')
+		value  = byte('0')
 		path   = fmt.Sprintf("/proc/sys/net/ipv6/conf/%s/disable_ipv6", os.Args[2])
 	)
 
